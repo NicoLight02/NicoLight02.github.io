@@ -1,7 +1,69 @@
 body {
-  font-family: Georgia, serif;
-  margin: 0;
-  padding: 0;
-  background-color: #2d4931;
-  height: 100%;
+    font-family: Tahoma;
+    margin: 0;
+    background: #a9c4aa;
 }
+
+header {
+    background: #283d29;
+    color: rgb(244, 255, 206);
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: #c7e2c8;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #91ad93;
+}
+
+button {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #b6d1b7;
+    color: #133b16;
+}
+
+button {
+    cursor: pointer;
+}
+
+.success {
+    background: #2e7d32;
+    color: white;
+}
+
+.danger {
+    background: #c62828;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #133b16;
+    color: white;
+}
+
