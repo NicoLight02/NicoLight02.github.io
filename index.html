@@ -1,16 +1,66 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Main_Page</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
 
+<header>
+    <h1>Library Management System</h1>
+</header>
+
+<!-- LOGIN -->
+<div class="container" id="loginContainer">
+    <h2>Login</h2>
+    <label>Username:</label>
+    <input type="text" id="loginUser"><br>
+    <label>Password:</label>
+    <input type="password" id="loginPass"><br>
+    <button onclick="login()"><b>Login</b></button>
+
+    <p><strong>Default accounts:</strong><br>
+    Admin → <b>Login: </b><i>admin</i> &emsp; <b>Password:</b> <i>admin</i><br>
+    User → <b>Login: </b><i>user</i> &emsp; <b>Password:</b> <i>user</i>
+    </p>
+</div>
+
+<!-- MAIN APP -->
+<div class="container hidden" id="mainApp">
+    <h2>Welcome, <span id="usernameDisplay"></span> (<span id="roleDisplay"></span>)</h2>
+    <button onclick="logout()">Logout</button>
+    <hr>
+
+    <h3>Add / Edit Book</h3>
+    <input type="hidden" id="editIndex">
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <button onclick="saveBook()" class="success">Save</button>
+
+    <hr>
+
+    <h3>Search Books</h3>
+    <input type="text" id="search" placeholder="Search by title or author" onkeyup="renderBooks()">
+
+    <hr>
+
+    <h3>Book Collection</h3>
+    <table id="bookTable">
+        <thead>
+            <tr>
+                <th onclick="sortBooks('title')">Title ▲▼</th>
+                <th onclick="sortBooks('author')">Author ▲▼</th>
+                <th onclick="sortBooks('borrowed')">Status ▲▼</th>
+                <th onclick="sortBooks('dueDate')">Due Date ▲▼</th>
+                <th onclick="sortBooks('popularity')">Times Borrowed ▲▼</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
